@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Words in Color</title>
+	<link rel="icon" type="image/x-icon" href="res/icon.png">
+</head>
+
+<body>
+	<input type="text" id="message" value="Write a sweet message :)" onkeyup="translate()">
+	<p id="output">
+
+<script>
+function translate(){
+	var txt = document.getElementById("message");
+	document.getElementById("output") = txt.value;
+}
+</script>
+</body>
+</html>
