@@ -4,16 +4,22 @@
 <head>
 	<title>Words in Color</title>
 	<link rel="icon" type="image/x-icon" href="res/icon.png">
+	<style>
+		body{
+			background-color: lightblue;
+		}
+	</style>
 </head>
 
 <body>
-	<input type="text" id="message" value="Write a sweet message :)" onkeyup="translate()">
+	<input type="text" id="message" value="Write a sweet message :)" oninput="make_hearts()">
 	<p id="output">
+	<button onclick="make_hearts()">Click</button>
 
 <script>
-function translate(){
-	var txt = document.getElementById("message");
-	document.getElementById("output").innerHTML = txt.value;
+function make_hearts(){
+	var txt = document.getElementById("message").value;
+	document.getElementById("output").innerHTML = txt;
 }
 </script>
 </body>
