@@ -14,13 +14,29 @@
 <body>
 	<input type="text" id="message" value="Write a sweet message :)" oninput="make_hearts()">
 	<p id="output">
-	<button onclick="make_hearts()">Click</button>
 
 <script>
-function make_hearts(){
-	var txt = document.getElementById("message").value;
-	document.getElementById("output").innerHTML = txt;
-}
+	const regex = /[a-z]/gi
+	function replace(match, offset, string){
+		if(match.match(/[dhknr]/gi)) //Red
+			return '\u2764';
+		else if(match.match(/[eu]/gi)) //Orange
+			return '\u1F9E1';
+		else if(match.match(/[a-cs]/gi)) //Yellow
+			return '\u1F49B';
+		else if(match.match(/[ptv]/gi)) //Green
+			return '\u1F49A';
+		else if(match.match(/[ioqyz]/gi)) //Blue
+			return '\u1F499';
+		else if(match.match(/[gjwx]/gi)) //Purple
+			return '\u1F49C';
+		else //Pink (Should only happen for F,L,M)
+			return '\u1F497';
+	}
+	function make_hearts(){
+		var txt = document.getElementById("message").value;
+		document.getElementById("output").innerHTML = txt.replaceAll(regex, replace);
+	}
 </script>
 </body>
 </html>
