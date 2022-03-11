@@ -19,19 +19,19 @@
 	const regex = /[a-z]/gi
 	function replace(match, offset, string){
 		if(match.match(/[dhknr]/gi)) //Red
-			return '\u{2764}';
+			return '&#10084;&#65039;';
 		else if(match.match(/[eu]/gi)) //Orange
-			return '\u{1F9E1}';
+			return '&#x1F9E1;';
 		else if(match.match(/[a-cs]/gi)) //Yellow
-			return '\u{1F49B}';
+			return '&#x1F49B;';
 		else if(match.match(/[ptv]/gi)) //Green
-			return '\u{1F49A}';
+			return '&#x1F49A;';
 		else if(match.match(/[ioqyz]/gi)) //Blue
-			return '\u{1F499}';
+			return '&#x1F499;';
 		else if(match.match(/[gjwx]/gi)) //Purple
-			return '\u{1F49C}';
+			return '&#x1F49C;';
 		else //Pink (Should only happen for F,L,M)
-			return '\u{1F497}';
+			return '&#x1F497;';
 	}
 	function make_hearts(){
 		var txt = document.getElementById("message").value;
