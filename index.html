@@ -4,16 +4,34 @@
 <head>
 	<title>Words in Color</title>
 	<link rel="icon" type="image/x-icon" href="res/icon.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-		body{
+		body {
 			background-color: lightblue;
+		}
+		.content-area {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			min-height: 99vh;
+		}
+		input[type="text"]{
+			width: 45vw;
+			font-size: 2.5em;
+			font-family: Geneva, Verdana, sans-serif;
+		}
+		p {
+			font-size: 2.5em;
 		}
 	</style>
 </head>
 
 <body>
-	<input type="text" id="message" value="Write a sweet message :)" oninput="make_hearts()">
-	<p id="output">
+	<div class="content-area">
+		<input type="text" id="message" value="Write a sweet message :)" oninput="make_hearts()">
+		<p id="output">
+	</div>
 
 <script>
 	const regex = /[a-z]/gi
